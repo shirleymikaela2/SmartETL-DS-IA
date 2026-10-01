@@ -5,7 +5,6 @@ https://www.datosabiertos.gob.ec/dataset/descomposicion-de-la-matricula-mineduc
 
 El 30 de septiembre de 2026 se recibió registro-administrativo-historico_2009-2024-fin.zip, cuyo único archivo es registro-administrativo-historico_2009-2024-fin.csv. Se incluye con el nombre de trabajo del recurso y los mismos bytes. La identificación de origen se basa en la elección del usuario y el archivo recibido, sin comparar bytes contra una segunda descarga del portal.
 
-|----------------------------------------------------------------------------|
 |            Medida            |                    Valor                    |
 |------------------------------|---------------------------------------------|
 | Bytes exactos                | 60.435.054                                  |
@@ -18,7 +17,7 @@ El 30 de septiembre de 2026 se recibió registro-administrativo-historico_2009-2
 | Periodos                     | 15, desde 2009-2010 Fin hasta 2023-2024 Fin |
 | AMIE distintos               | 29.640                                      |
 | Claves anio y AMIE repetidas | 0 en este archivo                           |
-|----------------------------------------------------------------------------|
+
 
 SHA-256 del CSV: cbaef39ca902cb5c9d433ce2504108f7c6ca5405a207e9cb9c6c6095d719146d
 
@@ -40,7 +39,6 @@ Las columnas se agrupan en periodo y ubicación (8), identificación y caracter�
 
 El cuadro siguiente mapea los encabezados observados a atributos Java y describe su uso en extracción. No sustituye el diccionario oficial de MINEDUC, que no se adjuntó. Los tipos se conservan String durante Extract.
 
-|-------------------------------------------------------------------------------------|
 |   Columna exacta   |   Atributo Java   |  Tipo  |            Descripción            |
 |--------------------|-------------------|--------|-----------------------------------|
 | Anio_lectivo       | anioLectivo       | String | Año lectivo y marca de fin        |
@@ -66,7 +64,6 @@ El cuadro siguiente mapea los encabezados observados a atributos Java y describe
 | Promovidos         | promovidos        | String | Cantidad promovida                |
 | No promovidos      | noPromovidos      | String | Cantidad no promovida             |
 | Abandono           | abandono          | String | Cantidad registrada como abandono |
-|-------------------------------------------------------------------------------------|
 
 ## Formato y calidad observada
 
@@ -102,20 +99,16 @@ Esta evidencia confirma que el programa pudo extraer el archivo en esa ejecució
 
 ### Registro de comprobaciones
 
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
 |          Comprobación         |                           Procedimiento                             |                    Resultado o estado                         |
 |-------------------------------|---------------------------------------------------------------------|---------------------------------------------------------------|
 | Carga del original            | Opción 1, ruta del CSV, UTF-8 y separador automático                | Confirmada en captura: 286.111 registros y 23 columnas        |
 | Separador                     | Revisar el mensaje al terminar la carga                             | Confirmado en captura: `;`                                    |
 | Conteo desde el menú          | Opción 5 después de cargar el original                              | Pendiente de evidencia de Andrés; esperado: 286111            |
 | Cabecera                      | Opción 2 y comparación con el diccionario de esta ficha             | Pendiente de evidencia de Andrés; esperado: las 23 columnas listadas |
-
 | Primeras filas                | Opción 3, posición 1 y cantidad 3                                   | Pendiente de evidencia de Andrés; comparar el primer registro con el ejemplo de esta ficha |
-
 | Carga de la muestra           | Opción 1 y ruta a `data/muestra_30_registros.csv`; después opción 5 | Pendiente de evidencia de Andrés; esperado: 30 registros y 23 columnas |
-
 | Correspondencia de la muestra | Comparar cabecera y las 30 filas con el inicio del original         | Pendiente de revisión personal de Andrés; deben coincidir los valores y el orden |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 Los datos de la auditoría técnica incluidos en las secciones anteriores proceden de la preparación del proyecto. Las comprobaciones pendientes de esta tabla no se presentan como ejecutadas personalmente por Andrés. Al realizarlas, sustituir el estado pendiente por el resultado observado y la referencia a su captura.
 
