@@ -10,7 +10,7 @@ Durante las siguientes etapas, el proyecto incorporará nuevas estructuras y alg
 
 ## Flujo del Hito 1
 
-CSV → Extract → Objetos Java → Lista enlazada → Consulta de registros
+`CSV → Extract → Objetos Java → Lista enlazada → Consulta de registros`
 
 ## Arquitectura
 
@@ -18,11 +18,11 @@ CSV → Extract → Objetos Java → Lista enlazada → Consulta de registros
 
 El proyecto se divide inicialmente en los siguientes módulos:
 
-- `data/`: dataset y archivos relacionados con los datos.
-- `src/model/`: clases que representan los registros educativos.
-- `src/etl/`: lectura y extracción de información desde el CSV.
-- `src/estructuras/`: estructuras de datos implementadas por el equipo.
-- `test/`: pruebas del sistema.
+- `data/`: dataset histórico del MINEDUC (286.111 registros) y muestra de 30 registros para pruebas.
+- `src/model/`: clases que representan los registros educativos (`EsquemaCsv`, `RegistroEducativo`, `RegistroMatricula`, `DatasetEducativo`).
+- `src/etl/`: lectura y extracción de información desde el CSV (`LectorCsv`, `Extract`).
+- `src/estructuras/`: estructuras de datos implementadas por el equipo (`Nodo<T>`, `ListaEnlazada<T>`).
+- `test/`: pruebas automatizadas del sistema (`PruebasHito1`).
 - `docs/`: documentación técnica del proyecto.
 - `diagramas/`: representaciones visuales de la arquitectura.
 
@@ -36,9 +36,9 @@ El proyecto se divide inicialmente en los siguientes módulos:
 
 ## Dataset
 
-El proyecto utiliza registros administrativos educativos del Ministerio de Educación del Ecuador (MINEDUC).
+El proyecto utiliza registros administrativos educativos históricos (2009–2024) del Ministerio de Educación del Ecuador (MINEDUC).
 
-Se trabajará con un dataset amplio para evaluar posteriormente el comportamiento de las estructuras de datos y algoritmos implementados.
+Se trabaja con una muestra de 30 registros (`data/muestra_30_registros.csv`) para validaciones rápidas y con el archivo completo de 286.111 registros y 23 columnas para evaluar el comportamiento de las estructuras de datos y algoritmos implementados.
 
 ## Integrantes
 
@@ -55,19 +55,43 @@ La documentación del proyecto se encuentra en:
 
 - `docs/propuesta.md`
 - `docs/arquitectura.md`
+- `docs/dataset.md`
+- `docs/extract.md`
+
+## Ejecución y pruebas
+
+### Ejecutar el sistema (Windows)
+
+Ejecutar directamente el script en la raíz del repositorio:
+
+```bat
+ejecutar.bat
+```
+
+### Ejecutar pruebas automatizadas del Hito 1
+
+```powershell
+if (!(Test-Path out)) { mkdir out }
+javac -encoding UTF-8 -d out src/estructuras/*.java src/model/*.java src/etl/*.java src/Main.java test/PruebasHito1.java
+java -cp out PruebasHito1
+```
 
 ## Estado actual
 
-### Hito 1
+### Hito 1 — Base ETL (Extract + Lista Enlazada) [Completado]
 
-Actualmente el proyecto se encuentra en la etapa inicial de desarrollo:
-
-- [x] Repositorio GitHub creado.
+- [x] Repositorio GitHub creado y organizado de forma modular.
 - [x] Arquitectura inicial definida.
-- [x] Dataset seleccionado.
-- [x] Organización modular definida.
-- [ ] Dataset integrado al repositorio.
-- [ ] Modelo de datos implementado.
-- [ ] Extract implementado.
-- [ ] Lista enlazada implementada.
-- [ ] Integración y pruebas completadas.
+- [x] Dataset del MINEDUC (286.111 registros) y muestra de 30 registros integrados en `data/`.
+- [x] Modelo de datos implementado (`EsquemaCsv`, `RegistroEducativo`, `RegistroMatricula`, `DatasetEducativo`).
+- [x] Módulo `Extract` implementado con detección de separador y validación de 23 columnas.
+- [x] `Nodo<T>` y `ListaEnlazada<T>` implementados con inserción en O(1).
+- [x] Integración en `Main.java` y script `ejecutar.bat` corregido.
+- [x] Pruebas automatizadas del Hito 1 (`test/PruebasHito1.java`) verificadas (15/15 pasadas).
+
+### Próximos hitos (En planificación)
+
+- [ ] Fase `Transform`: limpieza de espacios, normalización de `Zona` y conversión de campos numéricos con separador de miles (`Total_Estudiantes`, `Promovidos`, `No promovidos`, `Abandono`).
+- [ ] Fase `Load`: exportación de resultados limpios y reportes a CSV/TXT.
+- [ ] Estructuras adicionales: Pilas, Colas, Búsquedas, Ordenamientos, Árbol BST y Grafos (BFS/DFS).
+- [ ] Módulo de análisis / IA sobre deserción y promoción estudiantil.
