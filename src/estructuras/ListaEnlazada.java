@@ -20,38 +20,100 @@ public class ListaEnlazada<T> implements Iterable<T> {
         fin = nuevo;
         cantidad++;
     }
+
     public T obtener(int indice) {
         if (indice < 0 || indice >= cantidad) {
             throw new IndexOutOfBoundsException("Indice fuera de la lista: " + indice);
         }
         Nodo<T> actual = inicio;
-        for (int i = 0; i < indice; i++) { actual = actual.siguiente; }
+        for (int i = 0; i < indice; i++) {
+            actual = actual.siguiente;
+        }
         return actual.dato;
     }
+
     /** Recorre secuencialmente hasta encontrar la primera coincidencia. */
     public T buscar(Predicate<T> criterio) {
         Objects.requireNonNull(criterio, "El criterio es obligatorio");
         Nodo<T> actual = inicio;
         while (actual != null) {
-            if (criterio.test(actual.dato)) { return actual.dato; }
+            if (criterio.test(actual.dato)) {
+                return actual.dato;
+            }
             actual = actual.siguiente;
         }
         return null;
     }
-    @Override public java.util.Iterator<T> iterator() {
+
+    /** Elimina la primera coincidencia segun el criterio y devuelve true si elimino. */
+    public boolean eliminar(Predicate<T> criterio) {
+        Objects.requireNonNull(criterio, "El criterio es obligatorio");
+        Nodo<T> anterior = null;
+        Nodo<T> actual = inicio;
+        while (actual != null) {
+            if (criterio.test(actual.dato)) {
+                if (anterior == null) {
+                    inicio = actual.siguiente;
+                } else {
+                    anterior.siguiente = actual.siguiente;
+                }
+                if (actual == fin) {
+                    fin = anterior;
+                }
+                cantidad--;
+                return true;
+            }
+            anterior = actual;
+            actual = actual.siguiente;
+        }
+        return false;
+    }
+
+    /** Elimina y devuelve el elemento en la posicion indicada. */
+    public T eliminarEn(int indice) {
+        if (indice < 0 || indice >= cantidad) {
+            throw new IndexOutOfBoundsException("Indice fuera de la lista: " + indice);
+        }
+        Nodo<T> anterior = null;
+        Nodo<T> actual = inicio;
+        for (int i = 0; i < indice; i++) {
+            anterior = actual;
+            actual = actual.siguiente;
+        }
+        if (anterior == null) {
+            inicio = actual.siguiente;
+        } else {
+            anterior.siguiente = actual.siguiente;
+        }
+        if (actual == fin) {
+            fin = anterior;
+        }
+        cantidad--;
+        return actual.dato;
+    }
+
+    @Override
+    public java.util.Iterator<T> iterator() {
         return new java.util.Iterator<T>() {
             private Nodo<T> actual = inicio;
             public boolean hasNext() { return actual != null; }
             public T next() {
                 if (actual == null) throw new java.util.NoSuchElementException();
-                T dato=actual.dato; actual=actual.siguiente; return dato;
+                T dato = actual.dato;
+                actual = actual.siguiente;
+                return dato;
             }
         };
     }
+
     public int tamanio() { return cantidad; }
     public boolean estaVacia() { return cantidad == 0; }
+
     public void mostrar() {
-        if (estaVacia()) { System.out.println("La lista esta vacia."); return; }
+        if (estaVacia()) {
+            System.out.println("La lista esta vacia.");
+            return;
+        }
         Nodo<T> actual = inicio;
         while (actual != null) {
             System.out.println(actual.dato);

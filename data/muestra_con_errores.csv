@@ -1,0 +1,15 @@
+Anio_lectivo;Zona;Provincia;Cod_Provincia;Canton;Cod_Canton;Parroquia;Cod_Parroquia;Nombre_Institucion;AMIE;Escolarizacion;Tipo_Educacion;Sostenimiento;area;Regimen_Escolar;Jurisdiccion;Modalidad;Jornada;Acceso_Edificio;Total_Estudiantes;Promovidos;No promovidos;Abandono
+2009-2010 Fin;Zona 6;AZUAY;01;CUENCA;0101;BAÑOS;010151;CENTRO EDUCATIVO ROUSSEAU;01B00019;Escolarizada;Ordinario;Particular;Rural;Sierra;Intercultural Bilingüe;Presencial;Matutina;Terrestre;47;47;0;0
+2009-2010 Fin;Zona 6;AZUAY;01;CUENCA;0101;BAÑOS;010151;COLEGIO INTERCULTURAL BILINGUE DE  NARANCAY;01B00020;Escolarizada;Ordinario;Fiscal;Rural;Sierra;Intercultural Bilingüe;Presencial;Matutina;Terrestre;264;219;30;15
+2009-2010 Fin;Zona 6;AZUAY;01;CUENCA;0101;CHAUCHA;010153;SEIS DE JUNIO;01B00021;Escolarizada;Ordinario;Fiscal;Rural;Costa;Intercultural Bilingüe;Presencial;Matutina;Terrestre;24;17;5;2
+2009-2010 Fin;Zona 3;TUNGURAHUA;18;AMBATO;1801;ATOCHA;180101;UNIDAD EDUCATIVA AMBATO;18H00001;Escolarizada;Ordinario;Fiscal;Urbana;Sierra;Hispana;Presencial;Matutina;Terrestre;1.010;983;17;10
+2009-2010 Fin;Zona 3;TUNGURAHUA;18;AMBATO;1801;HUACHI;180102;COLEGIO BOLIVAR;18H00002;Escolarizada;Ordinario;Fiscal;Urbana;Sierra;Hispana;Presencial;Matutina;Terrestre;850;800;30;20
+2009-2010 Fin;Zona 3;TUNGURAHUA;18;PELILEO;1807;PELILEO;180750;ESCUELA MARIANO BENITEZ;18H00003;Escolarizada;Ordinario;Fiscal;Rural;Sierra;Hispana;Presencial;Matutina;Terrestre;320;300;10;10
+2009-2010 Fin;Zona 9;PICHINCHA;17;QUITO;1701;CENTRO;170101;COLEGIO MEJIA;17H00001;Escolarizada;Ordinario;Fiscal;Urbana;Sierra;Hispana;Presencial;Matutina;Terrestre;1.200;1.150;30;20
+2009-2010 Fin;Zona 8;GUAYAS;09;GUAYAQUIL;0901;TARQUI;090101;UNIDAD EDUCATIVA GUAYAQUIL;09H00001;Escolarizada;Ordinario;Fiscal;Urbana;Costa;Hispana;Presencial;Matutina;Terrestre;500;460;25;15
+2009-2010 Fin;Zona 6;AZUAY;01;CUENCA;0101;BAÑOS;010151;INSTITUCION SIN AMIE;;Escolarizada;Ordinario;Fiscal;Rural;Sierra;Hispana;Presencial;Matutina;Terrestre;50;45;3;2
+2009-2010 Fin;Zona 6;AZUAY;01;CUENCA;0101;BAÑOS;010151;CENTRO EDUCATIVO ROUSSEAU;01B00019;Escolarizada;Ordinario;Particular;Rural;Sierra;Intercultural Bilingüe;Presencial;Matutina;Terrestre;47;47;0;0
+2009-2010 Fin;Zona 3;TUNGURAHUA;18;AMBATO;1801;ATOCHA;180101;ESCUELA CON TEXTO EN NUMERO;18H00099;Escolarizada;Ordinario;Fiscal;Urbana;Sierra;Hispana;Presencial;Matutina;Terrestre;ABC;10;0;0
+2009-2010 Fin;Zona 3;TUNGURAHUA;18;AMBATO;1801;ATOCHA;180101;ESCUELA CON NEGATIVO;18H00098;Escolarizada;Ordinario;Fiscal;Urbana;Sierra;Hispana;Presencial;Matutina;Terrestre;100;105;-5;0
+2009-2010 Fin;Zona 3;TUNGURAHUA;18;AMBATO;1801;ATOCHA;180101;ESCUELA SUMA INCORRECTA;18H00097;Escolarizada;Ordinario;Fiscal;Urbana;Sierra;Hispana;Presencial;Matutina;Terrestre;100;80;10;5
+2009-2010 Fin;Zona 3;TUNGURAHUA;18;AMBATO;1801;ATOCHA;180101;;18H00096;Escolarizada;Ordinario;Fiscal;Urbana;Sierra;Hispana;Presencial;Matutina;Terrestre;60;55;3;2
